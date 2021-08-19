@@ -608,7 +608,7 @@ class CustomImageClassification:
         else:
             if (input_type == "file"):
                 try:
-                    image_to_predict = tf.keras.preprocessing.image.load_img(image_input, target_size=(self.__input_image_shape, self.__input_image_shape))
+                    image_to_predict = tf.keras.preprocessing.image.load_img(image_input, target_size=(self.__input_image_shape[0], self.__input_image_shape[1]))
                     image_to_predict = tf.keras.preprocessing.image.img_to_array(image_to_predict, data_format="channels_last")
                     image_to_predict = np.expand_dims(image_to_predict, axis=0)
                 except:
